@@ -14,11 +14,6 @@ print(f1(1, 2))
 # sum. Google for "python arbitrary arguments" and look for "*args"
 
 # YOUR CODE HERE
-# def f2(*args):
-#     if len(args) == 1:
-#         return int(args)
-#     else:
-#         return int(args + args)
 def f2(*args):
     return sum(args)
 
@@ -56,8 +51,9 @@ print(f3(8))     # Should print 9
 # Google "python keyword arguments".
 
 # YOUR CODE HERE
-def f4(*kwargs):
-
+def f4(**kwargs):
+    for key in kwargs:
+        print("key: %s, value: %s" % (key, kwargs[key]))
 
 # Should print
 # key: a, value: 12
@@ -76,4 +72,4 @@ d = {
 }
 
 # What thing do you have to add to make this work?
-f4(d)
+f4(d,)
